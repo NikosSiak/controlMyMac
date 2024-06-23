@@ -1,0 +1,4 @@
+node_modules/
+webOSTVjs-*/
+*.ipk
+.DS_Store

@@ -1,0 +1,10 @@
+{
+  "id": "com.nikossiak.controlmymac",
+  "version": "0.0.1",
+  "vendor": "My Company",
+  "type": "web",
+  "main": "index.html",
+  "title": "Control My Mac",
+  "icon": "icon.png",
+  "largeIcon": "largeIcon.png"
+}

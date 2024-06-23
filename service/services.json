@@ -1,0 +1,9 @@
+{
+  "id": "com.nikossiak.controlmymac.service",
+  "description": "HelloWorld Service",
+  "services": [
+    {
+      "name": "com.nikossiak.controlmymac.service"
+    }
+  ]
+}
