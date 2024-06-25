@@ -6,6 +6,7 @@ window.addEventListener('load', () => {
   webOS.service.request(serviceName, { method: 'connectToServer' });
 
   _getWebOSTVVersion();
+  _registerTVSize();
 });
 
 window.addEventListener('keydown', (e) => {
@@ -66,7 +67,7 @@ document.addEventListener('webOSMouse', (e) => {
   });
 });
 
-function _getWebOSTVVersion() {
+const _getWebOSTVVersion = () => {
   webOS.service.request('luna://com.webos.service.tv.systemproperty', {
     method: 'getSystemInfo',
     parameters: { keys: ['sdkVersion'] },
@@ -79,4 +80,19 @@ function _getWebOSTVVersion() {
       console.log('Failed to get webOS TV Version: ' + inError.errorText);
     }
   });
-}
+};
+
+const _registerTVSize = () => {
+  webOS.service.request(serviceName, {
+    method: 'register_tv_size',
+    parameters: {
+      payload: {
+        x: window.innerWidth,
+        y: window.innerHeight
+      }
+    },
+    onFailure: (err) => {
+      console.log(err);
+    }
+  });
+};
